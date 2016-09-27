@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Login Page</title>
+</h:head>
+<h:body>
+    <h:form method="POST">
+        <h:panelGrid columns="2">
+            <h:outputLabel value="Username:" />
+            <p:inputText id="username" name="username" />
+
+            <h:outputLabel value="Password:" />
+            <p:password id="password" name="password" />
+
+            <p:spacer width="5"/>
+            <p:commandButton action="/login" update="@form  " ajax="false" value="Login"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
