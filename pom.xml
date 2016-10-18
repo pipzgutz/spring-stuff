@@ -10,6 +10,7 @@
         <module>mongodb-gridfs</module>
         <module>primefaces-spring</module>
         <module>spring-data</module>
+        <module>primefaces-springboot-mysql</module>
     </modules>
 
     <properties>
