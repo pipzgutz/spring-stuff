@@ -20,6 +20,12 @@ public class Application {
 
     }
 
+    @Configuration
+    @ComponentScan("com.flowetc.springstuff.psm.controller")
+    public class ControllerConfig {
+        
+    }
+    
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
