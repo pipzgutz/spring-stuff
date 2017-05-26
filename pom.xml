@@ -12,6 +12,7 @@
         <module>spring-data</module>
         <module>primefaces-springboot-mysql</module>
         <module>spring-boot-online-registration-example</module>
+        <module>spring-boot-online-registration-example-thymeleaf</module>
     </modules>
 
     <properties>
