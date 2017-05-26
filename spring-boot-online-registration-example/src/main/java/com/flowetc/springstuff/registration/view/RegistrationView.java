@@ -1,6 +1,12 @@
 package com.flowetc.springstuff.registration.view;
 
+import com.flowetc.springstuff.registration.entity.Registration;
+import com.flowetc.springstuff.registration.service.RegistrationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import java.util.List;
 
 /**
  * @author Philip Mark Gutierrez <pgutierrez@owens.com>
@@ -9,31 +15,37 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RegistrationView {
-    private String firstName;
-    private String lastName;
-    private String emailAddress;
+    private Registration registration;
 
-    public String getFirstName() {
-        return firstName;
+    @Autowired
+    private RegistrationService registrationService;
+
+    private List<Registration> registeredUsers;
+
+    @PostConstruct
+    public void init() {
+        reset();
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String save() {
+        registrationService.register(registration);
+
+        return "thankyou.xhtml";
     }
 
-    public String getLastName() {
-        return lastName;
+    public List<Registration> getRegisteredUsers() {
+        return registrationService.findAll();
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    private void reset() {
+        registration = new Registration();
     }
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public Registration getRegistration() {
+        return registration;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setRegistration(Registration registration) {
+        this.registration = registration;
     }
 }

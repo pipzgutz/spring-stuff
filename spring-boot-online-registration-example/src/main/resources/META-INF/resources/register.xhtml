@@ -17,7 +17,7 @@
     <b:navBar brand="Online Registration" brandHref="/" inverse="true">
         <b:navbarLinks>
             <b:navLink value="Register" href="register.xhtml"/>
-            <b:navLink value="Users" href="#"/>
+            <b:navLink value="Users" href="users.xhtml"/>
         </b:navbarLinks>
         <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
         <b:navbarLinks pull="right"><b:navLink value="    " href="#"/></b:navbarLinks>
@@ -28,26 +28,27 @@
 
     <b:well>
         <b:container fluid="true">
+
             <h:form>
                 <h1>Register</h1>
                 <b:row>
                     <b:column mediumScreen="2">
-                        <b:inputText label="First Name" value="#{registrationView.firstName}"/>
+                        <b:inputText label="First Name" value="#{registrationView.registration.firstName}"/>
                     </b:column>
                 </b:row>
                 <b:row>
                     <b:column mediumScreen="2">
-                        <b:inputText label="Last Name" value="#{registrationView.lastName}"/>
+                        <b:inputText label="Last Name" value="#{registrationView.registration.lastName}"/>
                     </b:column>
                 </b:row>
                 <b:row>
                     <b:column mediumScreen="2">
-                        <b:inputText label="Email Address" value="#{registrationView.emailAddress}"/>
+                        <b:inputText label="Email Address" value="#{registrationView.registration.emailAddress}"/>
                     </b:column>
                 </b:row>
                 <b:row>
                     <b:column mediumScreen="2">
-                        <b:commandButton value="Register" look="primary"/>
+                        <p:commandButton value="Register" action="#{registrationView.save()}"/>
                     </b:column>
                 </b:row>
             </h:form>

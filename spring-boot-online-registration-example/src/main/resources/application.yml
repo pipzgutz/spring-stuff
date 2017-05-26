@@ -2,3 +2,12 @@ jsf:
   project-stage: development
   primefaces:
     theme: bootstrap
+spring:
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: somepassword

@@ -11,7 +11,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Home</title>
+    <title>Users</title>
 </h:head>
 <h:body>
     <b:navBar brand="Online Registration" brandHref="/" inverse="true">
@@ -28,8 +28,19 @@
 
     <b:jumbotron>
         <b:container fluid="true">
-            <h1>Welcome to the Online Registration System</h1>
-            <p>Where all our dreams come true</p>
+            <p:dataTable  var="user" value="#{registrationView.registeredUsers}">
+                <p:column headerText="First Name">
+                    #{user.firstName}
+                </p:column>
+
+                <p:column headerText="Last Name">
+                    #{user.lastName}
+                </p:column>
+
+                <p:column headerText="Email Address">
+                    #{user.emailAddress}
+                </p:column>
+            </p:dataTable>
         </b:container>
     </b:jumbotron>
 </h:body>
