@@ -1,0 +1,4 @@
+jsf:
+  project-stage: development
+  primefaces:
+    theme: bootstrap

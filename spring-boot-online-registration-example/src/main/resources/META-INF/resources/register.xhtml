@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ng="http://xmlns.jcp.org/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Register</title>
+</h:head>
+<h:body>
+    <b:navBar brand="Online Registration" brandHref="/" inverse="true">
+        <b:navbarLinks>
+            <b:navLink value="Register" href="register.xhtml"/>
+            <b:navLink value="Users" href="#"/>
+        </b:navbarLinks>
+        <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
+        <b:navbarLinks pull="right"><b:navLink value="    " href="#"/></b:navbarLinks>
+        <b:navbarLinks pull="right" styleClass="hidden-xs">
+            <b:navLink value="About Us" href="#"/>
+        </b:navbarLinks>
+    </b:navBar>
+
+    <b:well>
+        <b:container fluid="true">
+            <h:form>
+                <h1>Register</h1>
+                <b:row>
+                    <b:column mediumScreen="2">
+                        <b:inputText label="First Name" value="#{registrationView.firstName}"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column mediumScreen="2">
+                        <b:inputText label="Last Name" value="#{registrationView.lastName}"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column mediumScreen="2">
+                        <b:inputText label="Email Address" value="#{registrationView.emailAddress}"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column mediumScreen="2">
+                        <b:commandButton value="Register" look="primary"/>
+                    </b:column>
+                </b:row>
+            </h:form>
+        </b:container>
+    </b:well>
+</h:body>
+</html>
