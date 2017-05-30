@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
  * @version 1.0
  * @since May 25, 2017
  */
+@RequestScoped
 @Component
 public class RegistrationView {
     private Registration registration;
